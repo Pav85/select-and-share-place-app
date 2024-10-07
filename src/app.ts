@@ -1,1 +1,1 @@
-// Code goes here!
+const form = document.querySelector("form")!;

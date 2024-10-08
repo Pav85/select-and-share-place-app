@@ -34,7 +34,6 @@ function searchAddressHandler(event: Event) {
       }
 
       const coordinates = response.data.results[0].geometry.location;
-      console.log(coordinates);
     })
     .catch((err) => {
       alert(err.message);

@@ -7,6 +7,8 @@ const addressInput = document.getElementById("address")! as HTMLInputElement;
 
 const apiKey = process.env.GOOGLE_API_KEY;
 
+declare var google: any;
+
 if (!apiKey) {
   throw new Error("No API key provided");
 } else {
@@ -34,6 +36,12 @@ function searchAddressHandler(event: Event) {
       }
 
       const coordinates = response.data.results[0].geometry.location;
+      const map = new google.maps.Map(document.getElementById("map")!, {
+        center: coordinates,
+        zoom: 8,
+      });
+
+      new google.maps.Marker({ position: coordinates, map: map });
     })
     .catch((err) => {
       alert(err.message);

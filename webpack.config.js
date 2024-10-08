@@ -49,7 +49,7 @@ module.exports = {
       "process.env.GOOGLE_API_KEY": JSON.stringify(process.env.GOOGLE_API_KEY),
     }),
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./index.html",
       inject: "body",
       templateParameters: {
         GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,

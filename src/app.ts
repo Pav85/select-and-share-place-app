@@ -41,7 +41,10 @@ function searchAddressHandler(event: Event) {
         zoom: 8,
       });
 
-      new google.maps.Marker({ position: coordinates, map: map });
+      new google.maps.AdvancedMarkerElement({
+        position: coordinates,
+        map: map,
+      });
     })
     .catch((err) => {
       alert(err.message);
